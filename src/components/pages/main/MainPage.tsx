@@ -3,9 +3,11 @@ import {TaskService} from '../../../services/cat.service.ts'
 import {useInfiniteQuery} from "@tanstack/react-query"
 import styles from './mainpage.module.css'
 import {Card} from "../../layout/Card/Card.tsx";
-import React from "react";
+import React, {useContext} from "react";
+import {UserFavouriteContext} from "../../Providers/ContextProvider.tsx";
 
 export const MainPage = () => {
+    const {favourites,} = useContext(UserFavouriteContext)
 
     const {data, fetchNextPage, isFetchingNextPage} = useInfiniteQuery({
         queryKey: ['cats'],
@@ -15,8 +17,10 @@ export const MainPage = () => {
             if (pages){
                 return 1
             }
-        }
+        },
+        refetchOnMount: false,
     } )
+
 
     const handleNextPageBtn = (e:React.MouseEvent<HTMLElement>) => {
         e.preventDefault()
@@ -26,11 +30,11 @@ export const MainPage = () => {
     return <div className={styles.main}>
         <Header/>
         <div className={styles.container}>
-            {data?.pages.map((page, index) => page.map((cat:any, i:number   ) => <Card url={cat.url} isLiked={false} key={`${index}${i}`}/>))}
+            {data?.pages.map((page, index) => page.map((cat:any, i:number   ) => <Card url={cat.url} isLiked={favourites.includes(cat.url)} key={`${index}${i}`}/>))}
         </div>
         {isFetchingNextPage ? <p>Загружаем ещё котиков...</p> : <></>}
         <div className={styles.btnCont}>
-            <button onClick={handleNextPageBtn}>Загрузить ещё котиков</button>
+            <button onClick={handleNextPageBtn} disabled={isFetchingNextPage}>Загрузить ещё котиков</button>
         </div>
     </div>
 }

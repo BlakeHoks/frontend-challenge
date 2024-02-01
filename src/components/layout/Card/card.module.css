@@ -11,7 +11,7 @@ img {
 }
 
 .box:hover > .icon {
-    content: url("src/assets/heart.svg");
+    content: url("../../../assets/heart.svg");
 }
 
 .icon {
@@ -22,7 +22,7 @@ img {
 }
 
 .icon:hover {
-    content: url("src/assets/heart_filled.svg") !important;
+    content: url("../../../assets/heart_filled.svg") !important;
 }
 
 .box {
@@ -30,5 +30,5 @@ img {
 }
 
 .box:hover > .liked {
-    content: url("src/assets/heart_filled.svg") !important;
+    content: url("../../../assets/heart_filled.svg") !important;
 }
