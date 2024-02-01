@@ -14,7 +14,7 @@ export const Favourite = () => {
     }
 
     return (
-        <div >
+        <div className={styles.main}>
             <Header/>
             <div className={styles.container}>
                 {favourites.map((cat, i) => nullCheck(cat, i))}
