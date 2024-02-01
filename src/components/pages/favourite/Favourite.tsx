@@ -9,7 +9,7 @@ export const Favourite = () => {
 
     const nullCheck = (cat: string, i: number) => {
         if (cat){
-            return <Card url={cat} isLiked={true} key={i}/>
+            return <Card url={cat} isLiked={true} key={`${i}_${cat.slice(-7, -4)}`}/>
         }
     }
 

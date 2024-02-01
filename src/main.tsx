@@ -1,13 +1,13 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
-import {RouterProvider, createBrowserRouter, createRoutesFromElements, Route} from 'react-router-dom'
-import {Favourite} from "./components/pages/favourite/Favourite.tsx";
-import {MainPage} from "./components/pages/main/MainPage.tsx";
-import {QueryClient, QueryClientProvider} from "@tanstack/react-query";
-import {ContextProvider} from "./components/Providers/ContextProvider.tsx";
+import {RouterProvider, createRoutesFromElements, Route, createHashRouter} from 'react-router-dom'
+import {Favourite} from "./components/pages/favourite/Favourite.tsx"
+import {MainPage} from "./components/pages/main/MainPage.tsx"
+import {QueryClient, QueryClientProvider} from "@tanstack/react-query"
+import {ContextProvider} from "./components/Providers/ContextProvider.tsx"
 
-const router = createBrowserRouter(
+const router = createHashRouter(
     createRoutesFromElements(
         <Route path='/' element={<ContextProvider />}>
             <Route index element={<MainPage />} />

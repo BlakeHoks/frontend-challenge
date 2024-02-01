@@ -3,7 +3,8 @@ import {Outlet} from "react-router-dom";
 import {IUserFavouritesContext} from "../../types/types.ts";
 
 const defState = {
-    favourites: ['']
+    favourites: [''],
+    setFavourites: () => {}
 }
 
 export const UserFavouriteContext = createContext<IUserFavouritesContext>(defState)

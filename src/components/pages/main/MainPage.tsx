@@ -7,7 +7,7 @@ import React from "react";
 
 export const MainPage = () => {
 
-    const {data, fetchNextPage} = useInfiniteQuery({
+    const {data, fetchNextPage, isFetchingNextPage} = useInfiniteQuery({
         queryKey: ['cats'],
         queryFn: () => TaskService.get(),
         initialPageParam: 1,
@@ -28,6 +28,7 @@ export const MainPage = () => {
         <div className={styles.container}>
             {data?.pages.map((page, index) => page.map((cat:any, i:number   ) => <Card url={cat.url} isLiked={false} key={`${index}${i}`}/>))}
         </div>
+        {isFetchingNextPage ? <p>Загружаем ещё котиков...</p> : <></>}
         <div className={styles.btnCont}>
             <button onClick={handleNextPageBtn}>Загрузить ещё котиков</button>
         </div>
