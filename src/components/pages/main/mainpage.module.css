@@ -1,0 +1,35 @@
+.main {
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    margin: 50px 60px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 30px;
+}
+
+.btnCont {
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    width: 150px;
+    color: #2196F3;
+    cursor: pointer;
+    background-color: transparent;
+    border-radius: 15px;
+    border: solid #2196F3;
+    outline: none;
+    margin-bottom: 20px;
+}
+
+button:hover {
+    transition: .2s ease-out;
+    color: #FFFFFF;
+    background-color: #2196F3;
+}

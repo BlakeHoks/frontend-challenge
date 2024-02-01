@@ -1,0 +1,17 @@
+* {
+  margin: 0;
+  padding: 0;
+  color: #000;
+
+  font-family: Roboto, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 21px;
+  letter-spacing: 0.25px;
+}
+
+.active {
+  background-color: #1E88E5;
+  color: #FFF;
+}

@@ -1,0 +1,28 @@
+.header {
+    display: flex;
+    height: 64px;
+    background-color: #2196F3;
+    box-shadow: 0 -8px 10px 10px #697172;
+}
+
+.header > a {
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    transition: .2s ease-in-out;
+}
+
+.header > a:hover{
+    background-color: #1E88E5;
+    cursor: pointer;
+    color: #FFF;
+}
+
+.header > a:first-child{
+    margin-left: 62px;
+}
+
+a {
+    text-decoration: none;
+    color: #FFFFFFB2;
+}
